@@ -3,15 +3,14 @@ require_relative "a5.rb"
 require_relative "print_array_bin.rb"
 require 'scanf'
 
-#print "Introduzca el texto a cifrar:"
-#puts ""
-#texto_plano = gets.chomp
+print "Introduzca el texto a cifrar:"
+puts ""
+texto_plano = gets.chomp
 
 #En el ejemplo de la práctica:
-string19 = "1001000100011010001"
-string22 = "0101100111100010011010"
-string23 = "10111100110111100001111"
-=begin
+#string19 = "1001000100011010001"
+#string22 = "0101100111100010011010"
+#string23 = "10111100110111100001111"
 print "Introduzca la semilla para el registro de 19: "
 puts ""
 string19 = gets.chomp
@@ -21,7 +20,6 @@ string22 = gets.chomp
 print "Introduzca la semilla para el registro de 23: "
 puts ""
 string23 = gets.chomp
-=end
 
 #Convertimos de string a array de enteros
 array19 = string19.scanf("%1d" * 19)
@@ -58,8 +56,10 @@ puts "**************************************************************"
 puts ""
 STDOUT.flush
 
-#encriptado = a5.encriptar(texto_plano,key_stream)
-#print_array_bin(encriptado)
+encriptado = a5.encriptar(texto_plano,key_stream)
+print "Encriptado: "
+print_array_bin(encriptado)
 
-#desencriptado = a5.desencriptar(encriptado,key_stream)
-#print_array_bin(desencriptado)
+desencriptado = a5.desencriptar(encriptado,key_stream)
+print "Desencriptado: "
+print_array_bin(desencriptado)
